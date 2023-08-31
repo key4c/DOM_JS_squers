@@ -7,11 +7,9 @@ for (let i = 0; i < 4; i++) {
   newBox.className = 'card'
   newBox.innerText = `Это карта ${allCards.length + 1}`
 
-  //   newBox.style.backgroundColor = 'yellow'
-  //   newBox.style.color = 'red'
   newBox.style.cssText = `
     color: red;
-    background-color: yellow;
+    // background-color: yellow;
     `
   cards.appendChild(newBox)
   allCards = document.querySelectorAll('.card')
@@ -20,6 +18,7 @@ for (let i = 0; i < 4; i++) {
 for (let i = 0; i < allCards.length; i++) {
   allCards[i].style.cssText = `
             position: relative;
+            background-color: rgb(${rand()},${rand()},${rand()});
             `
   let innerDiv = document.createElement('div')
   innerDiv.className = 'innerDiv'
@@ -45,4 +44,8 @@ for (let i = 0; i < allCards.length; i++) {
 function getNum(el) {
   let text = el.innerText.trim()
   return text[text.length - 1]
+}
+
+function rand() {
+  return Math.floor(Math.random() * 255)
 }
