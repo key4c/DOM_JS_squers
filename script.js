@@ -24,7 +24,7 @@ for (let i = 0; i < allCards.length; i++) {
   let innerDiv = document.createElement('div')
   innerDiv.className = 'innerDiv'
   allCards[i].appendChild(innerDiv)
-  innerDiv.innerText = '1'
+  innerDiv.innerText = getNum(allCards[i])
   innerDiv.style.cssText = `
             width: 50px;
             height: 50px;
@@ -40,4 +40,9 @@ for (let i = 0; i < allCards.length; i++) {
             left: 50%;
             transform: translate(-50%, -50%);
             `
+}
+
+function getNum(el) {
+  let text = el.innerText.trim()
+  return text[text.length - 1]
 }
