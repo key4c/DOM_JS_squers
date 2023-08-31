@@ -17,31 +17,27 @@ for (let i = 0; i < 4; i++) {
   allCards = document.querySelectorAll('.card')
 }
 
-let lastBox = document.createElement('div')
-lastBox.className = 'card'
-lastBox.innerText = `Это карта ${allCards.length + 1}`
-lastBox.style.cssText = `
-    position: relative;
-    `
-
-cards.appendChild(lastBox)
-
-let innerDiv = document.createElement('div')
-innerDiv.className = 'innerDiv'
-lastBox.appendChild(innerDiv)
-innerDiv.innerText = '1'
-innerDiv.style.cssText = `
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    color: white;
-
-    text-align: center;
-    vertical-align: middle;
-    line-height: 50px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    `
+for (let i = 0; i < allCards.length; i++) {
+  allCards[i].style.cssText = `
+            position: relative;
+            `
+  let innerDiv = document.createElement('div')
+  innerDiv.className = 'innerDiv'
+  allCards[i].appendChild(innerDiv)
+  innerDiv.innerText = '1'
+  innerDiv.style.cssText = `
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            color: white;
+        
+            text-align: center;
+            vertical-align: middle;
+            line-height: 50px;
+        
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            `
+}
