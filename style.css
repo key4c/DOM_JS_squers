@@ -1,0 +1,18 @@
+body {
+  background-color: black;
+}
+.container {
+  margin: 0 auto;
+  width: 60%;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-color: #d3ff68;
+  margin: 20px;
+}
