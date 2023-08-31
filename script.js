@@ -49,3 +49,53 @@ function getNum(el) {
 function rand() {
   return Math.floor(Math.random() * 255)
 }
+
+cards.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  for (let i = 0; i < allCards.length; i++) {
+    if (event.target === allCards[i]) {
+      allCards[i].style.cssText = `
+        position: relative;
+        background-color: rgb(${rand()},${rand()},${rand()});
+      `
+    }
+  }
+})
+
+let btn = document.createElement('button')
+btn.innerText = ' Change colors!'
+btn.style.color = 'blue'
+btn.style.backgroundColor = 'white'
+btn.style.border = '2px solid red'
+cards.appendChild(btn)
+
+btn.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  for (let i = 0; i < allCards.length; i++) {
+    allCards[i].style.cssText = `
+        position: relative;
+        background-color: rgb(${rand()},${rand()},${rand()});
+        `
+    let innerDiv = document.createElement('div')
+    innerDiv.className = 'innerDiv'
+    allCards[i].appendChild(innerDiv)
+    innerDiv.innerText = getNum(allCards[i])
+    innerDiv.style.cssText = `
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        color: white;
+    
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50px;
+    
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        `
+  }
+})
